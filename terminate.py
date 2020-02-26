@@ -1,5 +1,6 @@
 import boto.ec2
 import sys
+#Write your particular access key id and secret access key in the next line.
 auth = {"aws_access_key_id": "id", "aws_secret_access_key": "access key"}
 def main():
 	if(len(sys.argv) < 2):
@@ -22,7 +23,7 @@ def startInstance():
         print(error1)
         sys.exit(0)
     try:
-         ec2.start_instances(instance_ids="instance id")
+         ec2.start_instances(instance_ids="instance id")		 #Write the instance id here which you want start.
     except Exception as e2:
         error2 = "Error2: %s" % str(e2)
         print(error2)
@@ -36,7 +37,7 @@ def terminateInstance():
         print(error1)
         sys.exit(0)
     try:
-         ec2.terminate_instances(instance_ids="instance id")
+         ec2.terminate_instances(instance_ids="instance id")             #Write the instance id here which you want to terminate.
     except Exception as e2:
         error2 = "Error2: %s" % str(e2)
         print(error2)
